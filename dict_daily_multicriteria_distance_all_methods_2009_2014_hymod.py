@@ -1,0 +1,266 @@
+# -*- coding: utf-8 -*-
+
+# Author = 'Funceme'
+# Credits = 'Leidinice Silva, Micael Costa, Duarte Junior'
+# Maintainer = 'Funceme'
+# Date = 24/01/2018  (dd/mm/aaaa)
+# Comment = 'Este script foi desenvolvido dentro do Termo de Cooperação
+#            0050.0100467.16.9 entre Funceme e Petrobras sob o contexto do
+#            Projeto Projeção de Vazão Natural Afluente com base na escala de
+#            tempo e clima'
+# Description = 'Dictionary of subbasins estatistical methods classification
+#                daily multicriteria distance.'
+
+
+"""
+Dictionary of subbasins estatistical methods classification daily 
+multicriteria distance.
+
+
+Dictionary format:
+    dict_best_method = {'basin': ['best_2w', 'best_4w'], ...}
+
+
+Parameters description:
+
+    best_2w: Best method per period - Two weeks
+    best_4w: Best method per period - Four weeks
+
+
+Each period must have one of the 3 strings below:
+
+    m1: m1 value delivered from GFS05_RSM2008 model.
+    m2: m2 value delivered from GFS05_RSM2008 model.
+    m3: m3 value delivered from GFS05_RSM2008 model
+
+
+Usage:
+    Used in the choice of best method flow data from the GFS05_RSM2008 model.
+
+
+Last update: 2018-01-24 14:55
+
+"""
+
+dict_best_method_gfs05_rsm2008_hymod={
+
+
+'amazonas_coaracy_nunes':			 ['m3',	'm3'],
+'amazonas_curua_una':				 ['m3',	'm3'],
+'amazonas_dardanelos':				 ['m2',	'm3'],
+'amazonas_samuel':				 ['m2',	'm3'],
+'amazonas_santo_antonio'			 ['m2',	'm3'],
+'amazonas_santo_antonio_do_jari':		 ['m3',	'm3'],
+'amazonas_teles_pires':				 ['m3', 'm3'],
+'atlantico_leste_irape':			 ['m1', 'm1'],
+'atlantico_leste_itapebi':			 ['m1',	'm1'],
+'atlantico_leste_itapebi_inc':			 ['m1', 'm1'],
+'atlantico_leste_pedra_do_cavalo':		 ['m1',	'm1'],
+'atlantico_leste_santa_clara':			 ['m1',	'm1'],
+'atlantico_sudeste_rosal':			 ['m1',	'm1'],
+'atlantico_sul_capivari_cachoeira':		 ['m3',	'm3'],
+'atlantico_sul_salto_pilao':			 ['m3',	'm1'],
+'doce_aimores':					 ['m3',	'm3'],
+'doce_aimores_inc':				 ['m3', 'm1'],
+'doce_baguari':					 ['m3', 'm3'],
+'doce_baguari_inc':				 ['m3', 'm3'],
+'doce_cadonga':					 ['m3',	'm3'],
+'doce_guilman':					 ['m1', 'm3'],
+'doce_mascarenhas':				 ['m3',	'm1'],
+'doce_mascarenhas_inc':				 ['m3', 'm3'],
+'doce_porto_estrela':				 ['m3',	'm3'],
+'doce_sa_carvalho':				 ['m1',	'm3'],
+'doce_sa_carvalho_inc':				 ['m3', 'm3'],
+'doce_salto_grande':				 ['m3', 'm3'],
+'grande_agua_vermelha':				 ['m3',	'm3'],
+'grande_agua_vermelha_inc':			 ['m3', 'm1'],
+'grande_as_oliveira':				 ['m3',	'm3'],
+'grande_as_oliveira_inc':			 ['m3', 'm3'],
+'grande_caconde':				 ['m3',	'm3'],
+'grande_camargos':				 ['m3',	'm3'],
+'grande_euclides_da_cunha':			 ['m3',	'm3'],
+'grande_euclides_da_cunha_inc':			 ['m3', 'm3'],
+'grande_funil_grande':				 ['m3',	'm3'],
+'grande_funil_grande_inc':			 ['m1', 'm1'],
+'grande_furnas':				 ['m3',	'm3'],
+'grande_furnas_inc':				 ['m3', 'm3'],				
+'grande_igarapava':				 ['m3',	'm3'],
+'grande_igarapava_inc':				 ['m3', 'm3'],
+'grande_jaguara':				 ['m3', 'm3'],
+'grande_jaguara_inc':				 ['m3', 'm3'],
+'grande_lc_barreto':				 ['m3',	'm3'],
+'grande_lc_barreto_inc':			 ['m3', 'm3'],
+'grande_marimbondo':				 ['m3',	'm3'],
+'grande_marimbondo_inc':			 ['m3', 'm3'],
+'grande_mascarenhas_de_moraes':			 ['m3',	'm3'],
+'grande_mascarenhas_de_moraes_inc':		 ['m3', 'm1'],
+'grande_porto_colombia':			 ['m3',	'm3'],
+'grande_porto_colombia_inc':			 ['m3', 'm3'],
+'grande_volta_grande':				 ['m3',	'm3'],
+'grande_volta_grande_inc':			 ['m3', 'm3'],
+'iguacu_foz_do_areia':				 ['m3',	'm3'],
+'iguacu_fundao':				 ['m3',	'm3'],
+'iguacu_fundao_inc':				 ['m2', 'm3'],
+'iguacu_gov_jose_richa':			 ['m3',	'm3'],
+'iguacu_gov_jose_richa_inc':			 ['m3', 'm3'],
+'iguacu_jordao':				 ['m3',	'm3'],
+'iguacu_jordao_inc':				 ['m2', 'm2'],
+'iguacu_salto_osorio':				 ['m3',	'm3'],
+'iguacu_salto_osorio_inc':			 ['m3', 'm3'],
+'iguacu_salto_santiago':			 ['m3',	'm3'],
+'iguacu_salto_santiago_inc':			 ['m3', 'm3'],
+'iguacu_santa_clara':				 ['m3',	'm3'],
+'iguacu_segredo':				 ['m3',	'm3'],
+'iguacu_segredo_inc':				 ['m3', 'm3'],
+'jacui_14_de_julho':				 ['m3', 'm3'],
+'jacui_castro_alves':				 ['m3',	'm1'],
+'jacui_dona_francisca':				 ['m3',	'm3'],
+'jacui_dona_francisca_inc':			 ['m3', 'm3'],
+'jacui_ernestina':				 ['m3',	'm3'],
+'jacui_itauba':					 ['m3',	'm3'],
+'jacui_itauba_inc':				 ['m3', 'm3'],
+'jacui_jacui':					 ['m3',	'm3'],
+'jacui_jacui_inc':				 ['m3', 'm3'],
+'jacui_monte_claro':				 ['m3',	'm1'],
+'jacui_monte_claro_inc':			 ['m3', 'm3'],
+'jacui_passo_real':				 ['m3',	'm3'],
+'jacui_passo_real_inc':				 ['m3', 'm3'],
+'paraguai_manso'				 ['m3', 'm1'],
+'paraiba_do_sul_anta':				 ['m3',	'm1'],
+'paraiba_do_sul_anta_inc':			 ['m3', 'm3'],
+'paraiba_do_sul_funil':				 ['m3', 'm1'],		
+'paraiba_do_sul_funil_inc':			 ['m3', 'm1'],
+'paraiba_do_sul_ilha_dos_pombos':		 ['m3',	'm1'],
+'paraiba_do_sul_ilha_dos_pombos_inc':		 ['m3', 'm3'],
+'paraiba_do_sul_jaguari':			 ['m3',	'm1'],
+'paraiba_do_sul_paraibuna':			 ['m1',	'm1'],
+'paraiba_do_sul_picada':			 ['m3',	'm1'],
+'paraiba_do_sul_santa_branca':			 ['m1',	'm1'],
+'paraiba_do_sul_santa_branca_inc':		 ['m1', 'm1'],
+'paraiba_do_sul_santa_cecilia':			 ['m3',	'm1'],
+'paraiba_do_sul_santa_cecilia_inc':		 ['m3', 'm1'],
+'paraiba_do_sul_santana':			 ['m3',	'm1'],
+'paraiba_do_sul_santana_inc':			 ['m2', 'm3'],
+'paraiba_do_sul_sobragi':			 ['m3',	'm1'],
+'paraiba_do_sul_sobragi_inc':			 ['m3', 'm1'],
+'paraiba_do_sul_tocos':				 ['m3',	'm3'],
+'parana_ilha_solteira':				 ['m3',	'm1'],
+'parana_ilha_solteira_inc':			 ['m3', 'm1'],
+'parana_itaipu':				 ['m3',	'm3'],
+'parana_itaipu_inc':				 ['m3', 'm3'],
+'parana_jupia':					 ['m3',	'm3'],
+'parana_porto_primavera':			 ['m3',	'm3'],
+'parana_porto_primavera_inc':			 ['m3', 'm3'],
+'paranaiba_barra_dos_coqueiros':		 ['m3',	'm1'],
+'paranaiba_barra_dos_coqueiros_inc':		 ['m2', 'm3'],
+'paranaiba_batalha':				 ['m3',	'm1'],
+'paranaiba_cachoeira_dourada':			 ['m3',	'm3'],
+'paranaiba_cachoeira_dourada_inc':		 ['m3', 'm3'],
+'paranaiba_cacu':				 ['m3',	'm1'],
+'paranaiba_capim_branco_i':			 ['m3',	'm1'],
+'paranaiba_capim_branco_i_inc':			 ['m1', 'm1'],
+'paranaiba_capim_branco_ii':			 ['m3',	'm1'],
+'paranaiba_capim_branco_ii_inc':		 ['m1', 'm1'],
+'paranaiba_corumba_i':				 ['m3',	'm3'],
+'paranaiba_corumba_i_inc':			 ['m3', 'm3'],
+'paranaiba_corumba_iii':			 ['m3',	'm3'],
+'paranaiba_corumba_iii_inc':			 ['m3', 'm3'],
+'paranaiba_corumba_iv':				 ['m3',	'm3'],
+'paranaiba_emborcacao':				 ['m3',	'm3'],
+'paranaiba_emborcacao_inc':			 ['m3', 'm3'],
+'paranaiba_foz_do_rio_claro':			 ['m3',	'm1'],
+'paranaiba_foz_do_rio_claro_inc':		 ['m3', 'm3'],
+'paranaiba_itumbiara':				 ['m3',	'm3'],
+'paranaiba_itumbiara_inc':			 ['m3', 'm3'],
+'paranaiba_miranda':				 ['m3',	'm1'],
+'paranaiba_miranda_inc':			 ['m3', 'm3'],
+'paranaiba_nova_ponte':				 ['m3',	'm1'],
+'paranaiba_salto':				 ['m3',	'm3'],
+'paranaiba_salto_rio_verdinho':			 ['m3',	'm3'],
+'paranaiba_salto_rio_verdinho_inc':		 ['m3', 'm3'],
+'paranaiba_sao_simao':				 ['m3',	'm1'],
+'paranaiba_sao_simao_inc':			 ['m3', 'm1'],
+'paranaiba_serra_do_facao':			 ['m3',	'm3'],
+'paranaiba_serra_do_facao_inc':			 ['m3', 'm3'],
+'paranapanema_canoas_i':			 ['m3',	'm3'],
+'paranapanema_canoas_i_inc':			 ['m3', 'm3'],
+'paranapanema_canoas_ii':			 ['m3',	'm3'],
+'paranapanema_canoas_ii_inc':			 ['m3', 'm3'],
+'paranapanema_capivara':			 ['m3',	'm3'],
+'paranapanema_capivara_inc':			 ['m3', 'm3'],
+'paranapanema_chavantes':			 ['m3',	'm3'],
+'paranapanema_chavantes_inc':			 ['m3', 'm3'],
+'paranapanema_jurumirim':			 ['m3',	'm3'],
+'paranapanema_maua':				 ['m3',	'm3'],
+'paranapanema_ourinhos':			 ['m3',	'm3'],
+'paranapanema_ourinhos_inc':			 ['m3', 'm3'],
+'paranapanema_piraju':				 ['m3',	'm3'],
+'paranapanema_piraju_inc':			 ['m3', 'm3'],
+'paranapanema_rosana':				 ['m3', 'm3'],
+'paranapanema_rosana_inc':			 ['m3', 'm1'],
+'paranapanema_salto_grande_l_n_garcez':		 ['m3', 'm1'],
+'paranapanema_salto_grande_l_n_garcez_inc':	 ['m1', 'm1'],
+'paranapanema_taquarucu_escola_politecnica':	 ['m3', 'm3'],
+'paranapanema_taquarucu_escola_politecnica_inc': ['m3', 'm1'],
+'sao_francisco_apolonio_sales':			 ['m3', 'm1'],
+'sao_francisco_complexo_paulo_afonso':		 ['m3', 'm1'],
+'sao_francisco_itaparica':			 ['m3',	'm3'],
+'sao_francisco_itaparica_inc':			 ['m1', 'm1'],
+'sao_francisco_paulo_afonso':			 ['m3',	'm3'],
+'sao_francisco_queimado':			 ['m3',	'm3'],
+'sao_francisco_retiro_baixo':			 ['m3',	'm3'],
+'sao_francisco_sobradinho':			 ['m3',	'm3'],
+'sao_francisco_sobradinho_inc':			 ['m3',	'm3'],
+'sao_francisco_tres_marias':			 ['m3',	'm1'],
+'sao_francisco_tres_marias_inc':		 ['m3', 'm1'],
+'sao_francisco_xingo':				 ['m3',	'm1'],
+'tiete_bariri':					 ['m3',	'm3'],
+'tiete_bariri_inc':				 ['m3', 'm3'],
+'tiete_barra_bonita':				 ['m3',	'm3'],
+'tiete_barra_bonita_inc':			 ['m3', 'm3'],
+'tiete_billings':				 ['m2',	'm3'],
+'tiete_billings_mais_pedras':			 ['m2', 'm3'],
+'tiete_edgard_de_souza':			 ['m3',	'm3'],
+'tiete_guarapiranga':				 ['m3',	'm3'],
+'tiete_ibitinga':				 ['m3',	'm3'],
+'tiete_ibitinga_inc':				 ['m3', 'm3'],
+'tiete_nova_avanhandava':			 ['m3',	'm3'],
+'tiete_nova_avanhandava_inc':			 ['m3', 'm1'],
+'tiete_ponte_nova':				 ['m3',	'm3'],
+'tiete_promissao':				 ['m3',	'm3'],
+'tiete_promissao_inc':				 ['m3', 'm1'],
+'tiete_tres_irmaos':				 ['m3',	'm3'],
+'tiete_tres_irmaos_inc':			 ['m1', 'm1'],
+'tocantins_cana_brava':				 ['m3',	'm3'],
+'tocantins_cana_brava_inc':			 ['m1', 'm1'],
+'tocantins_estreito_tocantins':			 ['m3',	'm3'],
+'tocantins_lajeado':				 ['m3',	'm3'],
+'tocantins_lajeado_inc':			 ['m3', 'm1'],
+'tocantins_peixe_angical':			 ['m3', 'm3'],
+'tocantins_peixe_angical_inc':			 ['m3', 'm3'],
+'tocantins_sao_salvador':			 ['m3',	'm3'],
+'tocantins_sao_salvador_inc':			 ['m1', 'm1'],
+'tocantins_serra_da_mesa':			 ['m3', 'm3'],
+'tocantins_tucurui':				 ['m3',	'm3'],
+'tocantins_tucurui_inc':			 ['m3', 'm3'],
+'uruguai_barra_grande':				 ['m3',	'm3'],
+'uruguai_campos_novos':				 ['m3',	'm3'],
+'uruguai_campos_novos_inc':			 ['m3', 'm3'],
+'uruguai_foz_do_chapeco':			 ['m3',	'm3'],
+'uruguai_foz_do_chapeco_inc':			 ['m3', 'm2'],
+'uruguai_garibaldi':				 ['m3',	'm3'],
+'uruguai_ita':					 ['m3',	'm3'],
+'uruguai_ita_inc':				 ['m3', 'm3'],
+'uruguai_machadinho':				 ['m3',	'm3'],
+'uruguai_machadinho_inc':			 ['m2', 'm2'],
+'uruguai_monjolinho':				 ['m3',	'm3'],
+'uruguai_monjolinho_inc':			 ['m3', 'm3'],
+'uruguai_passo_fundo':				 ['m3',	'm3'],
+'uruguai_passo_sao_joao':			 ['m3',	'm3'],
+'uruguai_passo_sao_joao_inc':			 ['m3', 'm3'],
+'uruguai_quebra_queixo':			 ['m3',	'm3'],
+'uruguai_sao_jose':                          	 ['m3', 'm3']}
+
+
+
+
